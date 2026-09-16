@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Investigating Lando Norris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Investigating Lando Norris's Website</h1>
+    <p>
+        For this assignment, I investigated the official Lando Norris website
+        to figure out how it was made.
+    </p>
+    <h2>01 Why I Chose This Website</h2>
+    <p>
+        I chose Lando Norris's website because I liked how interactive it felt.
+        Instead of just displaying information, the website uses movement,
+        scrolling, large typography, and animations throughout the page.
+        I wanted to figure out what was happening behind these interactions
+        and how they were made.
+    </p>
+    <h2>02 Opening the Inspector</h2>
+<p>
+    I started by opening Chrome's Inspector and looking through the HTML.
+    Since I did not know exactly what I was looking for, I searched for
+    names that might give me clues about how the website was built.
+    One of the first things I searched for was "webflow."
+</p>
+<p>
+    I found a class called "w-webflow-badge" and also noticed that several
+    assets were coming from "cdn.prod.website-files.com." This gave me my
+    first clue that Webflow was involved in building the website.
+</p>
+</p>
+<img src="images/webflow.png" alt="Webflow class found in Chrome Inspector">
+<h2>03 Finding Three.js</h2>
+<p>
+    Next, I searched for different JavaScript libraries that might be used
+    on the website. When I searched for "three," I found a canvas element
+    with "three.js r174" written in the code.
+</p>
+<p>
+    I learned that Three.js is a JavaScript library used to create and
+    display 3D graphics in a web browser. Finding it helped me understand
+    that some of the visual elements on the website are being rendered
+    through a canvas rather than just regular HTML and CSS.
+</p>
+<img src="images/threejs.png" alt="Three.js found in Chrome Inspector">
+<h2>04 Finding Lenis</h2>
+<p>
+    I then searched for "lenis" and found it listed as a class on the HTML
+    element. I looked it up and learned that Lenis is a JavaScript library
+    used for smooth scrolling.
+</p>
+<p>
+    This made sense because scrolling through the Lando Norris website feels
+    much smoother and more controlled than scrolling through a basic webpage.
+</p>
+<img src="images/lenis.png" alt="Lenis found in Chrome Inspector">
+<h2>05 Looking at the JavaScript Files</h2>
+<p>
+    After looking through the HTML, I opened the Network tab in Chrome
+    Inspector and filtered it to only show JavaScript files. I then reloaded
+    the website to see what scripts were being loaded.
+</p>
+<p>
+    Here I found jQuery 3.5.1 as well as several JavaScript files with names
+    specific to the website, including "lando-by-OFF+BRAND.05.js." This
+    showed me that the website uses existing JavaScript libraries along
+    with custom JavaScript.
+</p>
+<img src="images/network.png" alt="JavaScript files in the Network tab">
+<h2>06 Investigating the Signature Animation</h2>
+<p>
+    One specific interaction I wanted to understand was the animated
+    signature. I used the element selector in Chrome Inspector and clicked
+    on the signature to see what was behind it.
+</p>
+<p>
+    I found that the signature is displayed inside a canvas and that the
+    code references Rive. I also found a state machine called
+    "signature_scroll" and attributes that specify where the scroll
+    interaction starts and ends. From these clues, I figured out that the
+    signature animation is connected to the user's scroll position.
+</p>
+<img src="images/rive-signature.png" alt="Rive signature animation code">
+<h2>07 What I Learned</h2>
+<p>
+    Before inspecting the website, I mostly saw it as one complicated design.
+    When I first opened the code, I was honestly even more lost because I
+    didn't really know what I was looking at. But as I kept searching and
+    started connecting different parts of the code to features I saw on the
+    website, it became really interesting. I realized that the site is actually
+    made from a lot of different tools working together. I found Webflow,
+    Three.js, Lenis, Rive, jQuery, and custom JavaScript along the way.
+</p>
+<p>
+    The most interesting part for me was seeing how an interaction that looks
+    simple on the screen, like the signature reacting to scrolling, can have
+    several different pieces of code behind it.
+</p>
+</body>
+</html>
